@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Switch Exercise</title>
+</head>
+<body>
+
+<p id="output"></p>
+<p id="res1"></p>
+<p id="res4"></p>
+
+<script>
+    // #1a switch version
+    let grade1 = prompt("#1a: Enter grade (A-F)");
+    let message1;
+
+    if (grade1) {
+        switch (grade1.toUpperCase()) {
+            case "A":
+            case "B":
+                message1 = "Excellent";
+                break;
+            case "C":
+                message1 = "You passed";
+                break;
+            case "D":
+                message1 = "Needs improvement";
+                break;
+            case "F":
+                message1 = "Failed";
+                break;
+            default:
+                message1 = "Please input a valid grade.";
+        }
+    } else {
+        message1 = "No input provided.";
+    }
+
+
+    let output = "#1a: " + message1 + "<br>";
+
+    // #1b if version
+    let grade2 = prompt("#1b: Enter grade (A-F)");
+    let message2;
+
+    if (grade2) {
+        grade2 = grade2.toUpperCase();
+
+        if (grade2 === "A" || grade2 === "B") {
+            message2 = "Excellent";
+        } else if (grade2 === "C") {
+            message2 = "You passed";
+        } else if (grade2 === "D") {
+            message2 = "Needs improvement";
+        } else if (grade2 === "F") {
+            message2 = "Failed";
+        } else {
+            message2 = "Please input a valid grade.";
+        }
+    } else {
+        message2 = "No input provided.";
+    }
+
+    output = "#1a: " + message1 + "<br>" + "#1b: " + message2;
+    document.getElementById("output").innerHTML = output;
+
+
+    //#2 and onwards..
+
+
+    // 1. School Event (if into switch)
+    let id = prompt("Are you wearing your school ID? (yes/no)");
+    if (id) {
+        switch (id.toLowerCase()) {
+            case "yes":
+                document.getElementById("res1").innerHTML = "1. Welcome to the event!";
+                break;
+            case "no":
+                document.getElementById("res1").innerHTML = "1. Please show your ID.";
+                break;
+            default:
+                document.getElementById("res1").innerHTML = "1. Invalid input.";
+        }
+    } else {
+        document.getElementById("res1").innerHTML = "1. No input provided.";
+    }
+
+
+    // 2. Jeepney Fare (if into switch)
+    //Cannot directly convert this into a clean switch because switch only checks one variable, but this condition uses two variables.
+
+
+    // 3. Quiz Grade (if into switch)
+    // Cannot directly convert this into a clean switch because it uses range conditions (>=, <), while switch only checks exact values.
+
+
+    // 4. Data Promo (switch into if)
+    let promo = prompt("Choose A, B, or C:");
+    if (promo) {
+        promo = promo.toUpperCase();
+
+        if (promo === "A") {
+            document.getElementById("res4").innerHTML = "4. 1GB for 1 day";
+        } else if (promo === "B") {
+            document.getElementById("res4").innerHTML = "4. 5GB for 7 days";
+        } else if (promo === "C") {
+            document.getElementById("res4").innerHTML = "4. 10GB for 30 days";
+        } else {
+            document.getElementById("res4").innerHTML = "4. Invalid choice";
+        }
+    } else {
+        document.getElementById("res4").innerHTML = "4. No input provided.";
+    }
+
+
+    // 5. Vowel Counter (if into switch)
+    // Cannot directly convert this into a clean switch because it checks multiple conditions repeatedly inside a loop, which switch is not suited for.
+
+
+    // 6. Username Checker (if into switch)
+    // Cannot directly convert this into a clean switch because it uses length checking and boolean conditions, not exact values.
+
+
+    // 7. Secure Login System (if into switch)
+    // Cannot directly convert this into a clean switch because it uses a loop and repeated input, while switch only works for single comparisons.
+
+</script>
+
+</body>
+</html>
